@@ -1,4 +1,4 @@
-[![Deploy](https://telegra.ph/file/f19e417246a191cb311c9.jpg)](https://heroku.com/deploy?template=https://github.com/vckyou/GeezMusic.git)
+[![Deploy](https://telegra.ph/file/f19e417246a191cb311c9.jpg)](https://heroku.com/deploy?template=https://github.com/levina-x/GeezMusic.git)
 # Geez Music Player
 
 ### Commands 🛠
