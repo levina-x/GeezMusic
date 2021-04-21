@@ -1,5 +1,5 @@
 [![Deploy](https://telegra.ph/file/3cba15154285d7bc87771.jpg)](https://heroku.com/deploy?template=https://github.com/levina-x/GeezMusic.git)
-# Geez Music Player
+# Veez Music Player
 
 ### Commands 🛠
 #### Berlaku Untuk Seluruh Member :
