@@ -19,7 +19,7 @@ from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 @errors
 async def play(_, message: Message):
 
-    lel = await message.reply("🔄 **Sedang Memprosess...")
+    lel = await message.reply("🔄 **sedang memproses...")
     sender_id = message.from_user.id
     sender_name = message.from_user.first_name
 
@@ -27,8 +27,8 @@ async def play(_, message: Message):
             [
                 [
                     InlineKeyboardButton(
-                        text="🔊 Channel",
-                        url="https://t.me/Vckyouuu")
+                        text="channel support",
+                        url="https://t.me/levinachannel")
                    
                 ]
             ]
@@ -40,7 +40,7 @@ async def play(_, message: Message):
     if audio:
         if round(audio.duration / 60) > DURATION_LIMIT:
             raise DurationLimitError(
-                f"❌ Video dengan durasi lebih dari {DURATION_LIMIT} menit(s) tidak diperbolehkan untuk diputar!"
+                f"❌ video dengan durasi lebih dari {DURATION_LIMIT} menit(s) tidak dapat untuk diputar!"
             )
 
         file_name = get_file_name(audio)
@@ -55,13 +55,13 @@ async def play(_, message: Message):
 
     if message.chat.id in callsmusic.pytgcalls.active_calls:
         position = await queues.put(message.chat.id, file=file_path)
-        await lel.edit(f"#⃣ **Sedang Dalam Antrian Ke** {position}!")
+        await lel.edit(f"#⃣ **Sedang dalam antrian ke** {position}!")
     else:
         callsmusic.pytgcalls.join_group_call(message.chat.id, file_path)
         await message.reply_photo(
         photo="https://telegra.ph/file/a4fa687ed647cfef52402.jpg",
         reply_markup=keyboard,
-        caption="▶️ **Memutar Music** Request Dari {}!".format(
+        caption="▶️ **memutar musik** request dari {}!".format(
         message.from_user.mention()
         ),
     )
