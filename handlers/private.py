@@ -7,25 +7,25 @@ from helpers.filters import other_filters2
 
 @Client.on_message(other_filters2)
 async def start(_, message: Message):
-    await message.reply_sticker("CAACAgEAAxkBAAEJRNZgc4GPPxQ9q7CO5m2Ft9htxNuFHwACDwEAAlEpDTmkePNDDnym2x4E")
+    await message.reply_sticker("CAACAgEAAxkBAAEJc2Rgf4VDc3yFwhYxUoFgx8bYabZclQACfwgAAr-MkAQpURMT4hK2dh8E")
     await message.reply_text(
-        f"""**Hai Aku. {bn} 🎵
+        f"""*Halo, nama aku {bn} 🎶
 
-Saya bisa memutar musik di panggilan suara grup Anda. Dikembangkan Oleh [Vckyyy](https://t.me/VckyouuBitch).
+Saya dapat memutar musik di dalam voice chat group kamu. Saya diciptakan oleh [ms.vina](https://t.me/levinachannel).
 
-Note : Gunakan Bot Ini Dengan Bijak, Jika Terjadi Kendala Silahkan Hubungi [Vckyyy](https://t.me/VckyouuBitch).
+Note: Silahkan gunakan bot ini dengan baik & bijak, Jika terjadi kendala silahkan hubungi [levina](https://t.me/dlwrml).
         """,
         reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "🛠 Klik Disini Untuk Penjelasan Printah", url="https://telegra.ph/text-04-11-2")
+                        "📚 daftar dan penjelasan perintah", url="https://telegra.ph/command-04-21")
                   ],[
                     InlineKeyboardButton(
-                        "✨ Group", url="https://t.me/LordUserbot_Group"
+                        "📣 Group Support", url="https://t.me/gcsupportbots"
                     ),
                     InlineKeyboardButton(
-                        "🔊 Channel Info", url="https://t.me/Vckyouuu"
+                        "📣 Channel Support", url="https://t.me/levinachannel"
                     )]
             ]
         ),
@@ -39,7 +39,7 @@ async def gstart(_, message: Message):
             [
                 [
                     InlineKeyboardButton(
-                        "🔊 Channel Info", url="https://t.me/Vckyouuu")
+                        "📣 Channel Support", url="https://t.me/levinachannel")
                 ]
             ]
         )
