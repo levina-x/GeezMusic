@@ -18,10 +18,10 @@ async def pause(_, message: Message):
     ) or (
             callsmusic.pytgcalls.active_calls[message.chat.id] == 'paused'
     ):
-        await message.reply_text("❗ Tidak ada yang sedang diputar!")
+        await message.reply_text("Tidak ada lagu yang sedang diputar!")
     else:
         callsmusic.pytgcalls.pause_stream(message.chat.id)
-        await message.reply_text("▶️ Dijeda!")
+        await message.reply_text("▶️ dijeda!")
 
 
 @Client.on_message(command("resume") & other_filters)
@@ -33,10 +33,10 @@ async def resume(_, message: Message):
     ) or (
             callsmusic.pytgcalls.active_calls[message.chat.id] == 'playing'
     ):
-        await message.reply_text("❗ Tidak ada yang dijeda!")
+        await message.reply_text("Tidak ada lagu yang dijeda!")
     else:
         callsmusic.pytgcalls.resume_stream(message.chat.id)
-        await message.reply_text("⏸ Dilanjutkan!")
+        await message.reply_text("⏸ dilanjutkan!")
 
 
 @Client.on_message(command("end") & other_filters)
@@ -44,7 +44,7 @@ async def resume(_, message: Message):
 @authorized_users_only
 async def stop(_, message: Message):
     if message.chat.id not in callsmusic.pytgcalls.active_calls:
-        await message.reply_text("❗ Tidak ada yang streaming!")
+        await message.reply_text("❗ Tidak ada streaming!")
     else:
         try:
             callsmusic.queues.clear(message.chat.id)
@@ -60,7 +60,7 @@ async def stop(_, message: Message):
 @authorized_users_only
 async def skip(_, message: Message):
     if message.chat.id not in callsmusic.pytgcalls.active_calls:
-        await message.reply_text("❗ Tidak ada yang diputar untuk dilewati!")
+        await message.reply_text("Tidak ada lagu yang diputar untuk dilewati!")
     else:
         callsmusic.queues.task_done(message.chat.id)
 
@@ -72,4 +72,4 @@ async def skip(_, message: Message):
                 callsmusic.queues.get(message.chat.id)["file"]
             )
 
-        await message.reply_text("➡️ Melewati lagu saat ini!")
+        await message.reply_text("➡️ melewati lagu saat ini!")
